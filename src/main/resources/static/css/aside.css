@@ -1,0 +1,47 @@
+ul {
+	list-style-type: none;
+	font-size: 20px;
+	color: white;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+
+
+
+ul {
+	list-style-type: none;
+	font-size: 20px;
+	color: white;
+}
+
+a {
+	color: white;
+}
+
+.aside {
+	top : 10%;
+	position: fixed;
+	left: 0px;
+	background-color: #9178FF;
+	box-shadow: 1px 5px 5px grey;
+	width : 15%;
+	margin-right:0px;
+	height:100vh;
+	padding-top :100px;
+	padding-left: 30px;
+}
+
+.far {
+	color: white;
+}
+
+.formateur, .apprenant {
+	font-size: 20px;
+	font-style: italic;
+}
+
+a, li {
+	text-decoration: none !important;
+}

@@ -1,0 +1,7 @@
+-------------------------------------------------------------------------------
+Test set: app.EvalyApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.152 s <<< FAILURE! - in app.EvalyApplicationTests
+app.EvalyApplicationTests  Time elapsed: 0.151 s  <<< ERROR!
+java.lang.IllegalStateException: Unable to find a @SpringBootConfiguration, you need to use @ContextConfiguration or @SpringBootTest(classes=...) with your test
+

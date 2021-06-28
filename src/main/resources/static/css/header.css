@@ -1,0 +1,67 @@
+header {
+	height: 10%;
+	box-shadow: 0px 5px 5px grey;
+	background-color: #51438F;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	z-index: 1;
+}
+
+.avatar {
+	border-radius: 50%;
+	height: 40px;
+	width: 40px;
+}
+
+.avatar2 {
+	border-radius: 50%;
+	height: 100px;
+	width: 100px;
+}
+
+.bienvenue {
+	font-size: 35px;
+	color: white;
+}
+
+img {
+	height: 70px;
+	width: 25px;
+	background-color: #51438F;
+}
+
+.badge {
+	margin-left: -10px;
+}
+
+.dropdown-menu {
+	color: white;
+	background-color: #51438F;
+	border: none !important;
+}
+
+.card-body .badge {
+	font-size: 15px;
+	width: 150px;
+}
+
+.dropdown-toggle:focus {
+	outline: none;
+	border: none;
+	display: none;
+}
+
+
+
+
+button:focus {
+	outline: none !important;
+	border: none !important;
+	display: none !important;
+}
+
+.infos {
+	font-size: 18px;
+}
