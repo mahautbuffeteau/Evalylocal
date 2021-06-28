@@ -10,6 +10,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -31,12 +32,15 @@ public class ConnexionController {
 
 	@Autowired
 	private UtilisateurService utilisateurService;
+	@Autowired
+	private BCryptPasswordEncoder passwordEncoder;
 
 	@RequestMapping(value = "/public/connexion", method = RequestMethod.GET)
 	public String login(Model model, HttpServletRequest request, HttpServletResponse response) {
 
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 
+		//System.out.println(passwordEncoder.encode("123456aB!"));
 	
 		String titreString = "Decouvrez Evaly";
 
