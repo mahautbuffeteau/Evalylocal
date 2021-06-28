@@ -10,10 +10,10 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>app</groupId>
-	<artifactId>evaly</artifactId>
+	<artifactId>evalylocal</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
-	<name>evaly</name>
+	<name>evalylocal</name>
 	<description>Evaly_project</description>
 	<properties>
 		<java.version>1.8</java.version>

@@ -263,9 +263,9 @@ public class QuestionController {
 		System.out.println();
 		if (question.getIsQcm()) {
 			System.out.println("------Test rep3-------");
-			System.out.print("Test réponses 3 rep3null");
+			System.out.print("Test rÃ©ponses 3 rep3null");
 			System.out.println(question.getRep3() == null);
-			System.out.print("Test réponses 3 rep3empty" + question.getRep3().isEmpty());
+			System.out.print("Test rÃ©ponses 3 rep3empty" + question.getRep3().isEmpty());
 			System.out.println(question.getRep3().isEmpty());
 			System.out.println("-------------");
 		}
@@ -284,8 +284,8 @@ public class QuestionController {
 		// Gestion Theme
 		Theme theme = new Theme();
 		// Creation
-		System.out.println("Test entrée création thème :" + question.getNvthemebool() + " " + question.getIdMatiere());
-		System.out.println("Test entrée création thème :" + question.getNvthemebool() + " " + question.getIdMatiere());
+		System.out.println("Test entrÃ©e crÃ©ation thÃ¨me :" + question.getNvthemebool() + " " + question.getIdMatiere());
+		System.out.println("Test entrÃ©e crÃ©ation thÃ¨me :" + question.getNvthemebool() + " " + question.getIdMatiere());
 
 		if (question.getNvthemebool() != null && question.getIdMatiere() != null) {
 			for (int i = 0; i < 2; i++)
@@ -296,11 +296,11 @@ public class QuestionController {
 			Optional<Matiere> recupmatiere = matiereService.findById(question.getIdMatiere());
 			Matiere mat = recupmatiere.get();
 			for (int i = 0; i < 2; i++)
-				System.out.println("Nouveau Theme Matiere récupérée : " + mat);
+				System.out.println("Nouveau Theme Matiere rÃ©cupÃ©rÃ©e : " + mat);
 			theme.setMatiere(mat);
 			themeService.save(theme);
 			for (int i = 0; i < 2; i++)
-				System.out.println("Nouveau Theme sauvegardé : " + theme);
+				System.out.println("Nouveau Theme sauvegardÃ© : " + theme);
 		}
 		// Recup theme existant
 		else if (question.getNvthemebool() == null) {
@@ -330,7 +330,7 @@ public class QuestionController {
 		System.out.println(question.getRep2() + " " + question.getRep2br());
 		System.out.println("-------------");
 		if (question.getIsQcm()) {
-		System.out.println("Test réponses 3 rep3null" + question.getRep3() == null + "test isempty"
+		System.out.println("Test rÃ©ponses 3 rep3null" + question.getRep3() == null + "test isempty"
 				+ question.getRep3().isEmpty());
 		}
 		if (question.getIsQcm()) {
@@ -404,11 +404,7 @@ public class QuestionController {
 		if (isApprenant)
 			return "redirect:/protected/home";
 
-		System.out.println("------Test rep3 EDIT -------");
-		System.out.print("Test réponses 3 rep3null");
-		System.out.println(question.getRep3() == null);
-		System.out.print("Test réponses 3 rep3empty" + question.getRep3().isEmpty());
-		System.out.println(question.getRep3().isEmpty());
+		
 		System.out.println("-------------");
 		Optional<Question> edited = questionService.findById(question.getIdQuestion());
 		Question edit = edited.get();
@@ -483,9 +479,9 @@ public class QuestionController {
 			reponseService.save(r);
 		}
 
-		// Combien de réponses avant ?
-		// Si moins de réponses après, delete les réponses en trop
-		// Si plus, créer davantage
+		// Combien de rÃ©ponses avant ?
+		// Si moins de rÃ©ponses aprÃ¨s, delete les rÃ©ponses en trop
+		// Si plus, crÃ©er davantage
 		// Delete all / Create 2+ ?
 
 		Reponse n1 = new Reponse();
