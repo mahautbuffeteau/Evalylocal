@@ -9,7 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import model.GroupeFormateur;
+import modelold.EquipeChampionnat;
 import service.GroupeService;
 
 @Controller
@@ -35,7 +35,7 @@ public class GroupeController {
 		isConnectBoolean = true;
 		isAdmin = true;
 		
-		List<GroupeFormateur> groupesFormateurs = groupeService.getListGroupeFormateur();
+		List<EquipeChampionnat> groupesFormateurs = groupeService.getListGroupeFormateur();
 	
 		
 		model.addAttribute("connexion", isConnectBoolean);

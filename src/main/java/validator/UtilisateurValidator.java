@@ -37,7 +37,7 @@ public class UtilisateurValidator implements Validator {
 
 		UtilisateurDto compte = (UtilisateurDto) target;
 
-		if (compte.getMail() != null && !EMAIL_REGEX.matcher(compte.getMail()).matches()) {
+		if (compte.getEmail() != null && !EMAIL_REGEX.matcher(compte.getEmail()).matches()) {
 
 			errors.rejectValue("email", "compte.email", "Le format du mail est incorrect");
 
@@ -48,15 +48,11 @@ public class UtilisateurValidator implements Validator {
 			errors.rejectValue("password", "compte.password", "Le mot de passe est incorrect");
 		}
 
-		if (compte.getNom() != null && !NAME_REGEX.matcher(compte.getNom()).matches()) {
+		if (compte.getLogin() != null && !NAME_REGEX.matcher(compte.getLogin()).matches()) {
 
 			errors.rejectValue("name", "compte.nom", "Uniquement des caractères alphabétiques");
 		}
 
-		if (compte.getPrenom() != null && !NAME_REGEX.matcher(compte.getPrenom()).matches()) {
-
-			errors.rejectValue("name", "compte.nom", "Uniquement des caractères alphabétiques");
-		}
 
 	}
 

@@ -14,11 +14,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import model.Apprenant;
-import model.Examen;
-import model.Formateur;
-import model.PromotionFormateur;
-import model.ResultatExamen;
+import modelold.Apprenant;
+import modelold.Examen;
+import modelold.Formateur;
+import modelold.PromotionFormateur;
+import modelold.ResultatExamen;
 import service.ApprenantService;
 import service.ExamenService;
 import service.FormateurService;

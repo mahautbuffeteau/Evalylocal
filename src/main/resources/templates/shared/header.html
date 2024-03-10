@@ -29,14 +29,14 @@
 	<header th:fragment="header" class="header">
 		<nav class="navbar">
 			<div class="container-fluid ">
-				<img class="navbar-branda col-1" src="/images/evaly3.png" />
+				<img class="navbar-branda col-1" src="/images/wrc3.png" />
 				<form class="d-flex flex-row justify-content-center col-9 mr-0">
 					<div class="bienvenue text-center"
-						th:if="${titre == 'Bienvenue sur Evaly'}" th:text="${titre}"></div>
+						th:if="${titre == 'Bienvenue sur Résultats WRC App'}" th:text="${titre}"></div>
 					<div class="bienvenue text-center"
-						th:if="${titre == 'Decouvrez Evaly'}" th:text="${titre}"></div>
+						th:if="${titre == 'Decouvrez Résultats WRC App'}" th:text="${titre}"></div>
 					<div class="bienvenue text-center" th:if="${titre} == null">
-						Evaly, <i><span class="h3">testez vos limites</span></i>
+						wrc, <i><span class="h3">testez vos limites</span></i>
 					</div>
 				</form>
 

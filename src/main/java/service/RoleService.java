@@ -2,7 +2,7 @@ package service;
 
 import java.util.Optional;
 
-import model.Role;
+import modelold.Role;
 
 public interface RoleService {
 

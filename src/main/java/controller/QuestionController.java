@@ -17,12 +17,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import dto.QuestionDto;
-import model.Formateur;
-import model.FormateurMatiere;
-import model.Matiere;
-import model.Question;
-import model.Reponse;
-import model.Theme;
+import modelold.Formateur;
+import modelold.FormateurMatiere;
+import modelold.Matiere;
+import modelold.Question;
+import modelold.Reponse;
+import modelold.Theme;
 import service.FormateurService;
 import service.MatiereService;
 import service.QuestionService;

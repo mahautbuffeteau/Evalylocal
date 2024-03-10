@@ -40,15 +40,15 @@ import dto.FormateurDto;
 import dto.FormateurDtoFinal;
 import dto.UtilisateurDto;
 import dto.VerifyCodeDto;
-import model.Apprenant;
-import model.Formateur;
-import model.GroupeFormateur;
-import model.Matiere;
-import model.Organisation;
-import model.Promotion;
-import model.PromotionFormateur;
+import modelold.Apprenant;
+import modelold.Formateur;
+import modelold.EquipeChampionnat;
+import modelold.Matiere;
+import modelold.Organisation;
+import modelold.Promotion;
+import modelold.PromotionFormateur;
 import model.Utilisateur;
-import model.VerifyUtilisateur;
+import modelold.VerifyUtilisateur;
 import service.ApprenantService;
 import service.FormateurService;
 import service.GroupeService;
@@ -125,7 +125,7 @@ public class InscriptionController {
 		System.err.println(" --- --- --- verificationRoles --- --- --- ");
 	}
 
-	private final String UPLOAD_DIR = "C:\\Users\\afpa\\Documents\\workspace-spring-tool-suite-4-4.9.0.RELEASE\\evaly\\src\\main\\resources\\static\\images\\";
+	private final String UPLOAD_DIR = "C:\\Users\\afpa\\Documents\\workspace-spring-tool-suite-4-4.9.0.RELEASE\\WRC\\src\\main\\resources\\static\\images\\";
 
 	@InitBinder
 	public void initBinder(WebDataBinder binder) {
@@ -154,17 +154,17 @@ public class InscriptionController {
 
 		VerifyUtilisateur verifyutilisateur = verifyUtilisateurService.findByToken(verifyCodeDto.getToken()).get();
 
-		Utilisateur utilisateur = utilisateurService.findById(verifyutilisateur.getUtilisateur().getIdUtilisateur())
+		Utilisateur utilisateur = utilisateurService.findById(verifyutilisateur.getUtilisateur().getId())
 				.get();
 
-		System.err.println("utilisateur " + formateurService.findById(utilisateur.getIdUtilisateur()));
+		System.err.println("utilisateur " + formateurService.findById(utilisateur.getId()));
 
-		if (formateurService.findById(utilisateur.getIdUtilisateur()).isPresent()) {
+		if (formateurService.findById(utilisateur.getId()).isPresent()) {
 			System.err.println("formateur part");
-			Formateur formateur = utilisateurService.findById1(verifyutilisateur.getUtilisateur().getIdUtilisateur())
+			Formateur formateur = utilisateurService.findById1(verifyutilisateur.getUtilisateur().getId())
 					.get();
 
-			FormateurDtoFinal formateurDtoFinal = new FormateurDtoFinal(formateur.getIdUtilisateur(),
+			FormateurDtoFinal formateurDtoFinal = new FormateurDtoFinal(formateur.getId(),
 					formateur.getNom(), formateur.getPrenom(), formateur.getMail(), null,
 					formateur.getDateInscription(), null, formateur.getActive(), null, false, formateur.getIsReferent(),
 					null, null, null);
@@ -178,12 +178,12 @@ public class InscriptionController {
 
 			return "/public/inscription-final";
 
-		} else if (apprenantService.findById(utilisateur.getIdUtilisateur()).isPresent()) {
+		} else if (apprenantService.findById(utilisateur.getId()).isPresent()) {
 			System.err.println("apprenant part");
-			Apprenant apprenant = utilisateurService.findById2(verifyutilisateur.getUtilisateur().getIdUtilisateur())
+			Apprenant apprenant = utilisateurService.findById2(verifyutilisateur.getUtilisateur().getId())
 					.get();
 			System.err.println("promotion id" + apprenant.getPromotion().getIdPromotion());
-			ApprenantDtoFinal apprenantDtoFinal = new ApprenantDtoFinal(apprenant.getIdUtilisateur(),
+			ApprenantDtoFinal apprenantDtoFinal = new ApprenantDtoFinal(apprenant.getId(),
 					apprenant.getNom(), apprenant.getPrenom(), apprenant.getMail(), null,
 					apprenant.getDateInscription(), null, apprenant.getActive(), false, null, null,
 					apprenant.getPromotion().getIdPromotion(), null);
@@ -220,7 +220,7 @@ public class InscriptionController {
 		logger.info("utilisateur " + utilisateur);
 		logger.info("organisation " + organisation);
 
-		AdminEtablissementDto adminEtablissementDto = new AdminEtablissementDto(utilisateur.getIdUtilisateur(),
+		AdminEtablissementDto adminEtablissementDto = new AdminEtablissementDto(utilisateur.getId(),
 				organisation.getName(), organisation.getNumero(), organisation.getRue(), organisation.getVille(),
 				organisation.getCode(), null, utilisateur.getNom(), utilisateur.getPrenom(), utilisateur.getMail(),
 				null, utilisateur.getQuestionSecrete(), utilisateur.getReponseSecrete(), utilisateur.getIsAdmin());
@@ -280,7 +280,7 @@ public class InscriptionController {
 	@RequestMapping(value = "/admin/inscription-formateur-admin", method = RequestMethod.GET)
 	public String inscriptionFormateurAdmin(FormateurDto formateurDto, Model model) {
 
-		List<GroupeFormateur> groupesList = groupeService.getListGroupeFormateur();
+		List<EquipeChampionnat> groupesList = groupeService.getListGroupeFormateur();
 		List<Matiere> matieres = matiereService.matieres();
 
 		model.addAttribute("groupes", groupesList);

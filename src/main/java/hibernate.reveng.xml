@@ -2,25 +2,38 @@
 <!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.org/dtd/hibernate-reverse-engineering-3.0.dtd" >
 
 <hibernate-reverse-engineering>
-  <table-filter match-schema="evaly" match-name=".*"/>
-  <table-filter match-catalog="evaly" match-name="apprenant"/>
-  <table-filter match-catalog="evaly" match-name="examen"/>
-  <table-filter match-catalog="evaly" match-name="examen_sujet"/>
-  <table-filter match-catalog="evaly" match-name="formateur"/>
-  <table-filter match-catalog="evaly" match-name="formateur_groupe_formateur"/>
-  <table-filter match-catalog="evaly" match-name="formateur_matiere"/>
-  <table-filter match-catalog="evaly" match-name="groupe_formateur"/>
-  <table-filter match-catalog="evaly" match-name="matiere"/>
-  <table-filter match-catalog="evaly" match-name="organisation"/>
-  <table-filter match-catalog="evaly" match-name="promotion"/>
-  <table-filter match-catalog="evaly" match-name="promotion_formateur"/>
-  <table-filter match-catalog="evaly" match-name="question"/>
-  <table-filter match-catalog="evaly" match-name="reponse"/>
-  <table-filter match-catalog="evaly" match-name="reponse_apprenant"/>
-  <table-filter match-catalog="evaly" match-name="reponse_apprenant_examen"/>
-  <table-filter match-catalog="evaly" match-name="resultat_examen"/>
-  <table-filter match-catalog="evaly" match-name="sujet"/>
-  <table-filter match-catalog="evaly" match-name="sujet_question"/>
-  <table-filter match-catalog="evaly" match-name="theme"/>
-  <table-filter match-catalog="evaly" match-name="utilisateur"/>
+
+	<table-filter match-schema="wrc" match-name=".*"></table-filter>
+	<table-filter match-name="categorie" match-catalog="wrc"></table-filter>
+	<table-filter match-name="championnat" match-catalog="wrc"></table-filter>
+	<table-filter match-name="championnat_categorie"
+		match-catalog="wrc">
+	</table-filter>
+	<table-filter match-name="championnat_epreuve"
+		match-catalog="wrc">
+	</table-filter>
+	<table-filter match-name="classe" match-catalog="wrc"></table-filter>
+	<table-filter match-name="epreuve" match-catalog="wrc"></table-filter>
+	<table-filter match-name="epreuve_speciale" match-catalog="wrc"></table-filter>
+	<table-filter match-name="rallye" match-catalog="wrc"></table-filter>
+	<table-filter match-name="rallye_speciale" match-catalog="wrc"></table-filter>
+	<table-filter match-name="speciale_surface" match-catalog="wrc"></table-filter>
+	<table-filter match-name="surface" match-catalog="wrc"></table-filter>
+	<table-filter match-name="utilisateur" match-catalog="wrc"></table-filter>
+	<table-filter match-name="vehicule" match-catalog="wrc"></table-filter>
+	<table-filter match-name="verify_utilisateur" match-catalog="wrc"></table-filter>
+	<table-filter match-name="categorie_vehicule" match-catalog="wrc"></table-filter>
+	<table-filter match-name="chapeau" match-catalog="wrc"></table-filter>
+	<table-filter match-name="chapeau_utilisateur"
+		match-catalog="wrc">
+	</table-filter>
+	<table-filter match-name="equipe_championnat" match-catalog="wrc"></table-filter>
+	<table-filter match-name="resultat_championnat"
+		match-catalog="wrc">
+	</table-filter>
+	<table-filter match-name="resultat_epreuve" match-catalog="wrc"></table-filter>
+	<table-filter match-name="resultat_speciale" match-catalog="wrc"></table-filter>
+	<table-filter match-name="speciale" match-catalog="wrc"></table-filter>
+	<table-filter match-name="role" match-catalog="wrc"></table-filter>
+	<table-filter match-name="role_utilisateur" match-catalog="wrc"></table-filter>
 </hibernate-reverse-engineering>

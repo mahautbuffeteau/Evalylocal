@@ -8,7 +8,6 @@ import model.VerifyUtilisateur;
 
 public interface VerifyUtilisateurRepository extends JpaRepository<VerifyUtilisateur, Integer> {
 	
-	
 	Optional<VerifyUtilisateur> findByToken(String token);
 	
 	

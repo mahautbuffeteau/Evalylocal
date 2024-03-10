@@ -5,13 +5,13 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import model.Examen;
-import model.Formateur;
-import model.Matiere;
-import model.ReponseApprenant;
-import model.ReponseApprenantExamen;
-import model.SujetQuestion;
-import model.Theme;
+import modelold.Examen;
+import modelold.Formateur;
+import modelold.Matiere;
+import modelold.ReponseApprenant;
+import modelold.ReponseApprenantExamen;
+import modelold.SujetQuestion;
+import modelold.Theme;
 
 public class SujetDto {
 	

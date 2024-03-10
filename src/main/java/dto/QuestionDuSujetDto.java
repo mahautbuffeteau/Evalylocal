@@ -2,7 +2,7 @@ package dto;
 
 import java.util.List;
 
-import model.Question;
+import modelold.Question;
 
 public class QuestionDuSujetDto {
 	

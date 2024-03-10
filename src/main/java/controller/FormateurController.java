@@ -16,9 +16,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import dto.FormateurDtoFinal;
-import model.Formateur;
-import model.Promotion;
-import model.PromotionFormateur;
+import modelold.Formateur;
+import modelold.Promotion;
+import modelold.PromotionFormateur;
 import service.ExamenService;
 import service.FormateurMatiereService;
 import service.FormateurService;
@@ -126,7 +126,7 @@ public class FormateurController {
 		System.err.println(" >>>>>>>  " + formateur);
 		System.err.println(" >>>>>>> DDN  " + formateur.getDateNaissance());
 		
-		FormateurDtoFinal formateurDtoFinal = new FormateurDtoFinal(formateur.getIdUtilisateur(), formateur.getNom(),
+		FormateurDtoFinal formateurDtoFinal = new FormateurDtoFinal(formateur.getId(), formateur.getNom(),
 				formateur.getPrenom(), formateur.getMail(), formateur.getPassword(), formateur.getDateInscription(),
 				formateur.getDateNaissance(), formateur.getActive(), null, formateur.getIsAdmin(), null,
 				formateur.getQuestionSecrete(), formateur.getReponseSecrete(), listeIdPromotion);

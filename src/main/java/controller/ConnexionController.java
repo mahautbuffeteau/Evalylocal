@@ -42,7 +42,7 @@ public class ConnexionController {
 
 		//System.out.println(passwordEncoder.encode("123456aB!"));
 	
-		String titreString = "Decouvrez Evaly";
+		String titreString = "WRC";
 
 		model.addAttribute("titre", titreString);
 
@@ -55,7 +55,7 @@ public class ConnexionController {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 
 	
-		String titreString = "Decouvrez Evaly";
+		String titreString = "Decouvrez WRC";
 
 		model.addAttribute("titre", titreString);
 
@@ -66,7 +66,7 @@ public class ConnexionController {
 	@RequestMapping(value = "/protected/home", method = RequestMethod.GET)
 	public String getHome(Model model) {
 
-		String titreString = "Bienvenue sur Evaly";
+		String titreString = "Bienvenue sur WRC";
 
 		model.addAttribute("titre", titreString);
 

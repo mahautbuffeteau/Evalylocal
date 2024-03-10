@@ -15,13 +15,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javassist.expr.NewArray;
-import model.Apprenant;
-import model.Formateur;
-import model.FormateurMatiere;
-import model.GroupeFormateur;
-import model.Matiere;
-import model.Promotion;
-import model.PromotionFormateur;
+import modelold.Apprenant;
+import modelold.Formateur;
+import modelold.FormateurMatiere;
+import modelold.EquipeChampionnat;
+import modelold.Matiere;
+import modelold.Promotion;
+import modelold.PromotionFormateur;
 import repository.FormateurMatiereRepository;
 import service.ApprenantService;
 import service.FormateurMatiereService;
@@ -94,7 +94,7 @@ public class MatiereController {
 		Matiere mat = new Matiere();
 
 		model.addAttribute("matiere", mat);
-		List<GroupeFormateur> listgf = groupeService.getListGroupeFormateur();
+		List<EquipeChampionnat> listgf = groupeService.getListGroupeFormateur();
 		model.addAttribute("listegroupes", listgf);
 
 		model.addAttribute("connexion", isConnectBoolean);
@@ -178,7 +178,7 @@ public class MatiereController {
 		Optional<Matiere> mmm = matiereService.findById(matiereSelect);
 		Matiere mat = mmm.get();
 		model.addAttribute("matiere", mat);
-		List<GroupeFormateur> listgf = groupeService.getListGroupeFormateur();
+		List<EquipeChampionnat> listgf = groupeService.getListGroupeFormateur();
 		model.addAttribute("listegroupes", listgf);
 
 		isAdmin = false;
@@ -202,9 +202,9 @@ public class MatiereController {
 			System.out.println(matiere.getGroupeFormateur().getIdGroupeFormateur());
 
 		Matiere mat = new Matiere();
-		Optional<GroupeFormateur> groupeFormateuropt = groupeService
+		Optional<EquipeChampionnat> groupeFormateuropt = groupeService
 				.findById(matiere.getGroupeFormateur().getIdGroupeFormateur());
-		GroupeFormateur gf = groupeFormateuropt.get();
+		EquipeChampionnat gf = groupeFormateuropt.get();
 		mat.setGroupeFormateur(gf);
 
 		mat.setNom(matiere.getNom());

@@ -21,17 +21,12 @@ public class UserPrincipal implements UserDetails {
 
 	private String username;
 
-	private String prenom;
-
-
 	private String mail;
 
 	@JsonIgnore
 	private String password;
 
 	private Collection<? extends GrantedAuthority> authorities;
-
-	private String photo;
 
 	public UserPrincipal() {
 		super();
@@ -40,24 +35,20 @@ public class UserPrincipal implements UserDetails {
 
 	public UserPrincipal(Integer id, String username, String email, String password,
 
-			Collection<? extends GrantedAuthority> authorities, String prenom, String photo) {
+			Collection<? extends GrantedAuthority> authorities) {
 
 		super();
 		this.id = id;
 		this.username = username;
-		this.prenom = prenom;
 		this.mail = email;
 		this.password = password;
 		this.authorities = authorities;
-		this.photo = photo;
 	}
 
 	public static UserDetails create(Utilisateur utilisateur) {
 		List<GrantedAuthority> authorities = utilisateur.getRoles().stream()
 				.map(role -> new SimpleGrantedAuthority(role.getName())).collect(Collectors.toList());
-
-		return new UserPrincipal(utilisateur.getIdUtilisateur(), utilisateur.getNom(), utilisateur.getMail(),
-				utilisateur.getPassword(), authorities, utilisateur.getPrenom(), utilisateur.getPhoto());
+		return new UserPrincipal(utilisateur.getId(), utilisateur.getLogin(), utilisateur.getEmail(), utilisateur.getPassword(), authorities);
 
 	}
 
@@ -69,9 +60,6 @@ public class UserPrincipal implements UserDetails {
 		return mail;
 	}
 
-	public String getPrenom() {
-		return prenom;
-	}
 
 	@Override
 	public String getUsername() {
@@ -89,14 +77,6 @@ public class UserPrincipal implements UserDetails {
 	}
 	
 	
-	public String getPhoto() {
-		return photo;
-	}
-
-	public void setPhoto(String photo) {
-		this.photo = photo;
-	}
-
 	@Override
 	public boolean isAccountNonExpired() {
 		return true;
@@ -135,7 +115,7 @@ public class UserPrincipal implements UserDetails {
 
 	@Override
 	public String toString() {
-		return "UserPrincipal [id=" + id + ", username=" + username + ", prenom=" + prenom + ", mail=" + mail
+		return "UserPrincipal [id=" + id + ", username=" + username + ", mail=" + mail
 				+ ", password=" + password + ", authorities=" + authorities + "]";
 	}
 

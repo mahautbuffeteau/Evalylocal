@@ -1,121 +1,87 @@
 package dto;
 
+import java.util.Date;
+
 public class UtilisateurDto {
 
-	private Integer idUtilisateurDto;
-	private String nom;
-	private String prenom;
-	private String mail;
+	private int id;
+	private String login;
+	private String email;
 	private String password;
-	private String photo;
-	private String questionSecrete;
-	private String reponseSecrete;
-	private Boolean isAdmin;
-
-	public UtilisateurDto(String nom, String prenom, String mail, String password, String photo, String questionSecrete,
-			String reponseSecrete, Boolean isAdmin) {
+	private String racenet;
+	private Date inscription;
+	private Date dernierLogin;
+	private Boolean actif;
+	
+	
+	
+	public UtilisateurDto(int id, String login, String email, String password, String racenet, Date inscription,
+			Date dernierLogin, Boolean actif) {
 		super();
-		this.nom = nom;
-		this.prenom = prenom;
-		this.mail = mail;
+		this.id = id;
+		this.login = login;
+		this.email = email;
 		this.password = password;
-		this.photo = photo;
-		this.questionSecrete = questionSecrete;
-		this.reponseSecrete = reponseSecrete;
-		this.isAdmin = isAdmin;
+		this.racenet = racenet;
+		this.inscription = inscription;
+		this.dernierLogin = dernierLogin;
+		this.actif = actif;
 	}
-
-	public UtilisateurDto(Integer idUtilisateurDto, String nom, String prenom, String mail, String password,
-			String photo, String questionSecrete, String reponseSecrete, Boolean isAdmin) {
-		super();
-		this.idUtilisateurDto = idUtilisateurDto;
-		this.nom = nom;
-		this.prenom = prenom;
-		this.mail = mail;
-		this.password = password;
-		this.photo = photo;
-		this.questionSecrete = questionSecrete;
-		this.reponseSecrete = reponseSecrete;
-		this.isAdmin = isAdmin;
+	public int getId() {
+		return id;
 	}
-
-	public String getNom() {
-		return nom;
+	public void setId(int id) {
+		this.id = id;
 	}
-
-	public void setNom(String nom) {
-		this.nom = nom;
+	public String getLogin() {
+		return login;
 	}
-
-	public String getPrenom() {
-		return prenom;
+	public void setLogin(String login) {
+		this.login = login;
 	}
-
-	public void setPrenom(String prenom) {
-		this.prenom = prenom;
+	public String getEmail() {
+		return email;
 	}
-
-	public String getMail() {
-		return mail;
+	public void setEmail(String email) {
+		this.email = email;
 	}
-
-	public void setMail(String mail) {
-		this.mail = mail;
-	}
-
 	public String getPassword() {
 		return password;
 	}
-
 	public void setPassword(String password) {
 		this.password = password;
 	}
-
-	public String getPhoto() {
-		return photo;
+	public String getRacenet() {
+		return racenet;
 	}
-
-	public void setPhoto(String photo) {
-		this.photo = photo;
+	public void setRacenet(String racenet) {
+		this.racenet = racenet;
 	}
-
-	public String getQuestionSecrete() {
-		return questionSecrete;
+	public Date getInscription() {
+		return inscription;
 	}
-
-	public void setQuestionSecrete(String questionSecrete) {
-		this.questionSecrete = questionSecrete;
+	public void setInscription(Date inscription) {
+		this.inscription = inscription;
 	}
-
-	public String getReponseSecrete() {
-		return reponseSecrete;
+	public Date getDernierLogin() {
+		return dernierLogin;
 	}
-
-	public void setReponseSecrete(String reponseSecrete) {
-		this.reponseSecrete = reponseSecrete;
+	public void setDernierLogin(Date dernierLogin) {
+		this.dernierLogin = dernierLogin;
 	}
-
-	public Boolean getIsAdmin() {
-		return isAdmin;
+	public Boolean getActif() {
+		return actif;
 	}
-
-	public void setIsAdmin(Boolean isAdmin) {
-		this.isAdmin = isAdmin;
+	public void setActif(Boolean actif) {
+		this.actif = actif;
 	}
-
-	public Integer getIdUtilisateurDto() {
-		return idUtilisateurDto;
-	}
-
-	public void setIdUtilisateurDto(Integer idUtilisateurDto) {
-		this.idUtilisateurDto = idUtilisateurDto;
-	}
-
 	@Override
 	public String toString() {
-		return "UtilisateurDto [nom=" + nom + ", prenom=" + prenom + ", mail=" + mail + ", password=" + password
-				+ ", photo=" + photo + ", questionSecrete=" + questionSecrete + ", reponseSecrete=" + reponseSecrete
-				+ "]";
+		return "UtilisateurDto [id=" + id + ", login=" + login + ", email=" + email + ", password=" + password
+				+ ", racenet=" + racenet + ", inscription=" + inscription + ", dernierLogin=" + dernierLogin
+				+ ", actif=" + actif + "]";
 	}
+
+
 
 }

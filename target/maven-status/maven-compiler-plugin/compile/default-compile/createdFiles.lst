@@ -99,7 +99,7 @@ model\ExamenSujet.class
 service\VerifyUtilisateurService.class
 dto\QuestionDuSujetDto.class
 repository\GroupeRepository.class
-app\EvalyApplication.class
+app\wrcApplication.class
 service\impl\OrganisationServiceImpl.class
 service\impl\FormateurMatiereServiceImpl.class
 dto\UtilisateurDto.class

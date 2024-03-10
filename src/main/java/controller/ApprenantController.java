@@ -17,12 +17,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import dto.ApprenantDto;
 import dto.ApprenantDtoFinal;
-import model.Apprenant;
-import model.Examen;
-import model.Formateur;
-import model.FormateurMatiere;
-import model.Promotion;
-import model.ResultatExamen;
+import modelold.Apprenant;
+import modelold.Examen;
+import modelold.Formateur;
+import modelold.FormateurMatiere;
+import modelold.Promotion;
+import modelold.ResultatExamen;
 import service.ApprenantService;
 import service.ExamenService;
 import service.FormateurService;
@@ -159,7 +159,7 @@ public class ApprenantController {
 
 		System.err.println(" >>>>>>>  " + apprenant);
 
-		ApprenantDto apprenantDto = new ApprenantDto(apprenant.getIdUtilisateur(), apprenant.getNom(),
+		ApprenantDto apprenantDto = new ApprenantDto(apprenant.getId(), apprenant.getNom(),
 				apprenant.getPrenom(), apprenant.getMail(), apprenant.getDateInscription(),
 				apprenant.getPromotion().getIdPromotion());
 
@@ -179,7 +179,7 @@ public class ApprenantController {
 
 		System.err.println(" >>>>>>>  " + apprenant);
 
-		ApprenantDtoFinal apprenantDtoFinal = new ApprenantDtoFinal(apprenant.getIdUtilisateur(), apprenant.getNom(),
+		ApprenantDtoFinal apprenantDtoFinal = new ApprenantDtoFinal(apprenant.getId(), apprenant.getNom(),
 				apprenant.getPrenom(), apprenant.getMail(), apprenant.getPassword(), apprenant.getDateInscription(),
 				apprenant.getDateNaissance(), apprenant.getActive(), apprenant.getIsAdmin(),
 				apprenant.getQuestionSecrete(), apprenant.getReponseSecrete(),
